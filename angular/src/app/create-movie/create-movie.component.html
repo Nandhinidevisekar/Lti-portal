@@ -1,0 +1,40 @@
+<div class="col-md-6 user-container">
+    <h2>Add Movie</h2>
+
+    <form [formGroup]="createMovie" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Movie Name:</label>
+          <input type="text" formControlName="name" placeholder="Movie Name" name="name" class="form-control" id="name">
+          <!-- <span *ngIf="!name.valid && name.dirty" class="bg-warning">     
+          Name is required
+      </span> -->
+        </div>
+
+        <div class="form-group">
+            <label for="category">Movie Category:</label>
+            <input type="text" formControlName="category" placeholder="Movie Category" name="category" class="form-control" id="category">
+            <!-- <span *ngIf="!category.valid && category.dirty" class="bg-warning">     
+            Category is required
+        </span> -->
+          </div>
+
+          <div class="form-group">
+            <label for="producer">Producer:</label>
+            <input type="text" formControlName="producer" placeholder="Producer" name="producer" class="form-control" id="producer">
+            <!-- <span *ngIf="!producer.valid && producer.dirty" class="bg-warning">    
+            Producer is required
+        </span> -->
+          </div>
+
+          <div class="form-group">
+            <label for="director">Director:</label>
+            <input type="text" formControlName="director" placeholder="Director" name="director" class="form-control" id="director">
+            <!-- <span *ngIf="!director.valid && director.dirty" class="bg-warning">  
+            director is required
+        </span> -->
+          </div>
+
+<button class="btn btn-success">Submit</button>
+</form>
+
+</div>

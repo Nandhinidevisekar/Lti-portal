@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="col-md-12">
+    <h2 style="margin: auto"> Movie Details</h2>
+       <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="d-none d-sm-none">Id</th>
+        <th>Movie name</th>
+        <th>Movie Category</th>
+        <th>Producer</th>
+        <th>Director</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor=" let movie of movies">
+        <td class="d-none d-sm-none">{{movie.id}}</td>
+        <td>{{movie.name}}</td>
+        <td>{{movie.category}}</td>
+        <td>{{movie.producer}}</td>
+        <td>{{movie.director}}</td>
+        <td><button class="btn btn-success" (click)="deleteMovie(movie)"> Delete</button>
+          <button class="btn btn-success" (click)="updateMovie(movie)" style="margin-left: 20px;"> Update</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>

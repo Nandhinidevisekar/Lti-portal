@@ -1,0 +1,58 @@
+
+<h4> Search for Movie details</h4>
+<div class="col-md-6">
+
+  <button class="btn btn-success"  (click) = "searchCall();"> click here after selecting movie below</button>
+</div>
+<!--   
+<div ngIf="value == 'male'">Movie
+    <input type="search" placeholder="Search Test here..."  #txt/>
+    <input type="button" value="SEARCH" (click) = "searchCall(txt)"/> -->
+    <div class="col-md-6 ">
+
+     <form class="example-form">
+        <mat-form-field  appearance="fill" class="example-full-width">
+           <input type="text" matInput  placeholder="Search movies ..." [(ngModel)]="proxyValue" [formControl]="movieTitle" [matAutocomplete]="auto">  
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)='selectedOption($event);'>
+              <mat-option *ngFor="let movie of movies" [value]="movie">{{ movie.name }}
+              </mat-option>
+            </mat-autocomplete> 
+          
+        </mat-form-field>
+
+    </form>
+    </div>
+    <div *ngIf="searchedin" >
+      <div class="col-md-12">
+      <h2 style="margin: auto"> Movie Details</h2>
+         <table class="table table-striped">
+        <thead> 
+        <tr>
+          <th class="d-none d-sm-none">Id</th>
+          <th>Movie name</th>
+          <th>Movie Category</th>
+          <th>Multiplex Name</th>
+          <th>Multiplex Location</th>
+          <th>Alloted Screen</th>
+  
+        </tr>
+        </thead>
+        <tbody>
+          
+        <tr *ngFor=" let allot of allotlist">
+          <td class="d-none d-sm-none">{{allot.id}}</td>
+          <td>{{allot.moviename.name}}</td>
+           <td>{{allot.moviename.category}}</td>
+          <td>{{allot.multiplexname.multiplexName}}</td>
+          <td>{{allot.multiplexname.location}}</td>  
+          <td>{{allot.screenno}}</td>
+         </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+    
+  
+
+    
+

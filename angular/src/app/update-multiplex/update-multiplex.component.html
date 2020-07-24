@@ -1,0 +1,29 @@
+<div class="col-md-6 user-container">
+    <h2>Update Multiplex</h2>
+
+    <form [formGroup]="updateMultiplex" (ngSubmit)="onSubmit()">
+        <div class="d-none d-sm-none">
+            <label for="id">Multiplex ID:</label>
+            <input type="text" formControlName="id" placeholder="Multiplex id" name="id" class="form-control" id="id">
+          </div>
+        <div class="form-group">
+          <label for="name">Multiplex Name:</label>
+          <input type="text" formControlName="multiplexName" placeholder="Multiplex Name" name="multiplexName" class="form-control" id="multiplexName">
+        </div>
+
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" formControlName="location" placeholder="Multiplex location" name="location" class="form-control" id="location">
+          </div>
+
+          <div class="form-group">
+            <label for="screen">No of Screen:</label>
+            <input type="text" formControlName="noOfScreen" placeholder="No of Screen" name="noOfScreen" class="form-control" id="noOfScreen">
+          </div>
+
+         
+
+<button class="btn btn-success">Update</button>
+</form>
+
+</div>

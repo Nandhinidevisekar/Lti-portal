@@ -1,0 +1,36 @@
+<div class="col-md-6 user-container">
+    <h2>Allot Movie to Multiplex</h2>
+
+    <form [formGroup]="allotMovie" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="multiplex">Multipex:</label>
+            <select formControlName="multiplexId" class="form-control" (change)="loadScreens($event);">
+                <option value="">Choose Multiplex</option>
+                <option *ngFor="let multiplex of multiplexes" value={{multiplex.id}}>
+                    {{multiplex.multiplexName}}</option>
+              </select>
+          </div>
+          <div class="form-group">
+            <label for="movie">Movie:</label>
+
+            <select formControlName="movieId" class="form-control">
+                <option value="">Choose Movie</option>
+                <option *ngFor="let movie of movies" value={{movie.id}}>
+                    {{movie.name}}</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+            <label for="screen">Screen:</label>
+
+            <select formControlName="screenno" class="form-control" (change)="checkCombination($event);"> 
+                <option value="">Choose Screen</option>
+                <option *ngFor="let screen of screens" value={{screen}}>
+                   Screen {{screen}}</option>
+              </select>
+          </div>
+
+          <button class="btn btn-success">Submit</button>
+
+</form>
+</div>

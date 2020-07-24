@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="col-md-12">
+    <h2 style="margin: auto"> Multiplex Details</h2>
+       <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="d-none d-sm-none">Id</th>
+        <th>Multiplex name</th>
+        <th>Multiplex Location</th>
+        <th>No of Screen</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor=" let multiplex of multiplexes">
+        <td class="d-none d-sm-none">{{multiplex.id}}</td>
+        <td>{{multiplex.multiplexName}}</td>
+        <td>{{multiplex.location}}</td>
+        <td>{{multiplex.noOfScreen}}</td>
+        <td><button class="btn btn-success" (click)="deleteMultiplex(multiplex)"> Delete</button>
+          <button class="btn btn-success" (click)="updateMultiplex(multiplex)" style="margin-left: 20px;"> Update</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>

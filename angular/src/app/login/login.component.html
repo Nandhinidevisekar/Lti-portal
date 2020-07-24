@@ -1,0 +1,28 @@
+
+  <div class="sidenav">
+    <div class="login-main-text">
+       <h2>Multiplex Portal<br> Admin Login/Search Page for Visitors</h2>
+       <p>Login or Search from here to access.</p>
+    </div>
+ </div>
+ <div class="main">
+    <div class="col-md-6 col-sm-12">
+       <div class="login-form">
+          <form>
+            <div *ngIf="!autherized" class="text-danger">
+              <h3>{{errorMessage}}</h3>
+            </div>
+             <div class="form-group">
+                <label>User Name</label>
+                <input type="text" placeholder="Enter login id" class="form-control" #txtLogin />
+              </div>
+             <div class="form-group">
+                <label>Password</label>
+                <input type="password" placeholder="Enter password" class="form-control" #txtPass />
+              </div>
+             <button type="button" class="btn btn-black" value="Login" (click) = "login(txtLogin, txtPass)">Login</button>
+             <button type="button" class="btn btn-secondary" value="search" (click) ="search();" >Visitors/Search</button> 
+          </form>
+       </div>
+    </div>
+ </div>
